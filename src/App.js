@@ -1,25 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import SearchBar from "./Components/SearchBar";
+import ImagesList from "./Components/ImagesList";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+const App= ()=>{
+   let [info , setInfo] = useState("") ;
+
+   console.log(info) ;
+    
+    return(
+        <div>
+            <SearchBar setInfo={setInfo}/>
+            <ImagesList  images={info} /> 
+        </div>
+    )
 }
 
-export default App;
+export default App ;
